@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>💰 Mega Clicker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="game">
+
+    <header>
+      <h1>💰 MEGA CLICKER</h1>
+      <p>Кликай → зарабатывай → прокачивайся → становись миллионером!</p>
+    </header>
+
+    <div class="stats">
+      <div class="stat">
+        <span>💰 Монеты</span>
+        <b id="coins">0</b>
+      </div>
+
+      <div class="stat">
+        <span>⭐ Уровень</span>
+        <b id="level">1</b>
+      </div>
+
+      <div class="stat">
+        <span>⚡ За клик</span>
+        <b id="perClick">1</b>
+      </div>
+
+      <div class="stat">
+        <span>🤖 В секунду</span>
+        <b id="perSecond">0</b>
+      </div>
+    </div>
+
+    <div class="levelBox">
+      <div class="levelText">
+        <span>Опыт</span>
+        <span id="xpText">0 / 100</span>
+      </div>
+      <div class="xpBar">
+        <div id="xpBar"></div>
+      </div>
+    </div>
+
+    <main>
+
+      <section class="clickArea">
+
+        <div id="combo">🔥 Комбо: 0</div>
+
+        <button id="clickButton">
+          <span>💰</span>
+          <small>КЛИК!</small>
+        </button>
+
+        <p>Нажимай как можно быстрее!</p>
+
+        <div class="critical">
+          🎯 Критический шанс: <b id="critChance">5%</b>
+        </div>
+
+      </section>
+
+      <section class="shop">
+
+        <h2>🛒 МАГАЗИН</h2>
+
+        <div class="upgrade">
+          <div>
+            <h3>👆 Сильный клик</h3>
+            <p>+1 монета за клик</p>
+          </div>
+          <button id="clickUpgrade">
+            Купить<br>
+            💰 <span id="clickCost">25</span>
+          </button>
+        </div>
+
+        <div class="upgrade">
+          <div>
+            <h3>🤖 Автокликер</h3>
+            <p>+1 монета каждую секунду</p>
+          </div>
+          <button id="autoUpgrade">
+            Купить<br>
+            💰 <span id="autoCost">100</span>
+          </button>
+        </div>
+
+        <div class="upgrade">
+          <div>
+            <h3>💥 Критический удар</h3>
+            <p>+5% шанс ×5 награды</p>
+          </div>
+          <button id="critUpgrade">
+            Купить<br>
+            💰 <span id="critCost">500</span>
+          </button>
+        </div>
+
+        <div class="upgrade">
+          <div>
+            <h3>🔥 Суперклик</h3>
+            <p>+10 монет за клик</p>
+          </div>
+          <button id="superUpgrade">
+            Купить<br>
+            💰 <span id="superCost">2500</span>
+          </button>
+        </div>
+
+      </section>
+
+    </main>
+
+    <section class="achievements">
+      <h2>🏆 ДОСТИЖЕНИЯ</h2>
+
+      <div class="achievementList">
+
+        <div class="achievement" id="ach1">
+          <span>👶</span>
+          <div>
+            <b>Первый клик</b>
+            <small>Сделай 1 клик</small>
+          </div>
+        </div>
+
+        <div class="achievement" id="ach2">
+          <span>💵</span>
+          <div>
+            <b>Богач</b>
+            <small>Заработай 1 000 монет</small>
+          </div>
+        </div>
+
+        <div class="achievement" id="ach3">
+          <span>💎</span>
+          <div>
+            <b>Миллионер</b>
+            <small>Заработай 1 000 000 монет</small>
+          </div>
+        </div>
+
+        <div class="achievement" id="ach4">
+          <span>🔥</span>
+          <div>
+            <b>Кликер</b>
+            <small>Сделай 1 000 кликов</small>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="bottom">
+
+      <button id="save">💾 Сохранить</button>
+      <button id="reset">🔄 Сбросить</button>
+
+    </section>
+
+    <footer>
+      Mega Clicker • Твой прогресс сохраняется автоматически
+    </footer>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
