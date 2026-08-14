@@ -1,0 +1,330 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background:
+    radial-gradient(circle at top, #263b75, #0b1024 60%);
+  color: white;
+  min-height: 100vh;
+}
+
+.game {
+  width: 100%;
+  max-width: 1000px;
+  margin: auto;
+  padding: 20px;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+header h1 {
+  font-size: 36px;
+  margin-bottom: 8px;
+}
+
+header p {
+  color: #b9c4e8;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.stat {
+  background: rgba(255,255,255,.08);
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 16px;
+  padding: 15px;
+  text-align: center;
+  backdrop-filter: blur(10px);
+}
+
+.stat span {
+  display: block;
+  color: #b7c2e8;
+  font-size: 14px;
+  margin-bottom: 7px;
+}
+
+.stat b {
+  font-size: 23px;
+}
+
+.levelBox {
+  margin: 18px 0;
+  background: rgba(0,0,0,.25);
+  padding: 12px;
+  border-radius: 15px;
+}
+
+.levelText {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 7px;
+}
+
+.xpBar {
+  width: 100%;
+  height: 14px;
+  background: #161d38;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+#xpBar {
+  width: 0%;
+  height: 100%;
+  background: linear-gradient(90deg, #00eaff, #8c5cff);
+  transition: width .2s;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.clickArea,
+.shop,
+.achievements {
+  background: rgba(255,255,255,.07);
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 22px;
+  padding: 20px;
+  backdrop-filter: blur(12px);
+}
+
+.clickArea {
+  text-align: center;
+  min-height: 430px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#combo {
+  color: #ffd84d;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+#clickButton {
+  width: 220px;
+  height: 220px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  background: radial-gradient(circle at 35% 30%, #fff, #ffd34d 8%, #ff8a00 45%, #e43b00);
+  box-shadow:
+    0 0 30px rgba(255,160,0,.5),
+    inset 0 -15px 20px rgba(0,0,0,.2);
+  color: white;
+  transition: transform .08s;
+  user-select: none;
+  touch-action: manipulation;
+}
+
+#clickButton span {
+  display: block;
+  font-size: 75px;
+}
+
+#clickButton small {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#clickButton:active {
+  transform: scale(.9);
+}
+
+.clickArea > p {
+  margin-top: 18px;
+  color: #adb8dd;
+}
+
+.critical {
+  margin-top: 15px;
+  color: #cbd4f0;
+}
+
+.critical b {
+  color: #ffcf3f;
+}
+
+.shop h2,
+.achievements h2 {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.upgrade {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  padding: 14px;
+  margin-bottom: 12px;
+  background: rgba(0,0,0,.22);
+  border-radius: 15px;
+}
+
+.upgrade h3 {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.upgrade p {
+  color: #9da8cc;
+  font-size: 13px;
+}
+
+.upgrade button,
+.bottom button {
+  border: none;
+  border-radius: 12px;
+  padding: 10px 13px;
+  background: #6655ff;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  min-width: 95px;
+}
+
+.upgrade button:hover,
+.bottom button:hover {
+  filter: brightness(1.2);
+}
+
+.upgrade button:disabled {
+  background: #363b57;
+  color: #777f9e;
+  cursor: not-allowed;
+}
+
+.achievements {
+  margin-top: 20px;
+}
+
+.achievementList {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.achievement {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px;
+  border-radius: 15px;
+  background: rgba(0,0,0,.2);
+  opacity: .4;
+}
+
+.achievement.unlocked {
+  opacity: 1;
+  background: rgba(255,205,50,.12);
+}
+
+.achievement > span {
+  font-size: 30px;
+}
+
+.achievement b {
+  display: block;
+}
+
+.achievement small {
+  color: #aeb8d8;
+}
+
+.bottom {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.bottom button {
+  background: #252d4d;
+}
+
+footer {
+  text-align: center;
+  color: #6f7ba6;
+  font-size: 13px;
+  padding: 10px;
+}
+
+.float {
+  position: fixed;
+  pointer-events: none;
+  font-size: 25px;
+  font-weight: bold;
+  animation: floatUp .8s ease-out forwards;
+  z-index: 999;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(-100px) scale(1.4);
+    opacity: 0;
+  }
+}
+
+@media (max-width: 700px) {
+
+  .game {
+    padding: 10px;
+  }
+
+  header h1 {
+    font-size: 27px;
+  }
+
+  .stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  main {
+    grid-template-columns: 1fr;
+  }
+
+  .clickArea {
+    min-height: 400px;
+  }
+
+  #clickButton {
+    width: 190px;
+    height: 190px;
+  }
+
+  #clickButton span {
+    font-size: 65px;
+  }
+
+  .achievementList {
+    grid-template-columns: 1fr;
+  }
+
+  .upgrade {
+    padding: 12px;
+  }
+}
